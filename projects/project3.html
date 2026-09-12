@@ -1,44 +1,57 @@
-<!-- 
-Written by Benjamin Wenger and Copilot 365 on 5-20-2026
-Last revision 8-19-26
-HTML code for coursework page
+<!--
+Written by Benjamin Wenger on 9-11-26
+Last revision 9-11-26
+HTML code for project3 subpage
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Coursework</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Component Tester</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-<header>
-    <h1>Coursework</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="coursework.html">Coursework</a>
-    </nav>    
-</header>
-
 <section>
-    <h2>Relevant Coursework in Progress</h2>
-    <h3>Fall 2026</h3>
-    <ul>
-        <li>Linear Systems</li>
-        <li>Analog Electronics</li>
-        <li>Control Systems</li>
-        <li>Industrial Automation</li>
-    </ul>
-    <h3>Spring 2027</h3>
-    <ul>
-        <li>Electrical Devices (Digital/FPGAs)</li>
-        <li>Embedded Systems Design</li>
-        <li>Dynamics and Vibrations</li>
-        <li>Mechanical Design</li>
-    </ul>
+    <h2>Instrumentation & Measurement Component Tester</h2>
+    <img src="../images/project3.png" style="max-width:100%;">
 
-    <p>Transcript available upon request.</p>
+    <h2>Overview</h2>
+    <p>
+        I worked with a small team in Spring 2026 to build and validate a functionality tester for 11 sensors with various 
+        communication protocols. The sensors interface with an Arduino Mega via a soldered perfboard and shield, as shown
+        in the picture above. I developed and debugged the 
+        <a href="https://github.com/bwenger1377/i_m_tester_code" target="_blank" aria-label="GitHub">embedded software</a>
+        in C++, then integrated it with the hardware and validated the functionality of both hardware and software components. 
+        The end result reduced the time required to test a full batch of sensors by 98%.
+    </p>
+
+    <br></br>
+    <hr>
+    <br></br>
+
+    <h2>Sensors Tested</h2>
+
+    <img src="../images/sensors.png" style="max-width:30;">
+    <p>
+        The sensors tested had I²C, SPI, Analog, and Digital communication protocols. 
+    </p>
+
+    <br></br>
+    <hr>
+    <br></br>
+
+    <h2>Final Product</h2>
+    <img src="../images/finalProduct.jpg" style="max-width:25;">
+    <p>
+        The device is used to diagnose broken sensors in the Instrumentation and Measurement class (ENGR 373) to reduce 
+        troubleshooting time during labs.
+    </p>
+
+    <br></br>
+    <hr>
+    <br></br>
+    <a class="button" href="../index.html#projects">← Back to Projects</a>
 </section>
 
 <footer>

@@ -1,158 +1,380 @@
 /*
 Written by Benjamin Wenger and Copilot 365 on 5-20-2026
-Last revision 5-20-26
-CSS code for site appearance
+Last revision 9-11-2026
+Stylesheet for Professional Portfolio
 */
 
-/* Base reset */
+:root {
+
+    --bg: #f8fafc;
+    --surface: #ffffff;
+
+    --text: #0f172a;
+    --muted: #64748b;
+
+    --primary: #022a3a;
+    --primary-hover: #003b4f;
+
+    --border: #e2e8f0;
+
+    --shadow:
+        0 12px 30px rgba(15, 23, 42, 0.08);
+
+    --radius: 18px;
+
+    --max-width: 1200px;
+}
+
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =========================
+   BODY
+========================= */
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    background-color: #f5f7fa;
-    color: #333;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
 }
 
-/* Header */
-header {
-    background: #1f2937;
-    color: white;
-    padding: 25px 20px;
-    text-align: center;
-}
+/* =========================
+   TYPOGRAPHY
+========================= */
 
-header h1 {
-    margin-bottom: 5px;
-    font-size: 28px;
-}
-
-header p {
-    color: #9ca3af;
-}
-
-/* Navigation */
-nav {
-    margin-top: 15px;
-}
-
-nav a {
-    color: #9ca3af;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: white;
-}
-
-/* Sections */
-section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
+h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    font-weight: 800;
 }
 
 h2 {
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 8px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-/* Project grid layout */
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+p {
+    color: var(--muted);
+}
+
+/* =========================
+   PAGE TITLES
+========================= */
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-title h1 {
+    margin-bottom: 1rem;
+}
+
+.page-title::after {
+    content: "";
+    display: block;
+    width: 180px;
+    height: 1px;
+    background: var(--border);
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER + NAVIGATION
+========================= */
+
+header {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.section-title {
+    margin-bottom: 2rem;
+}
+
+.section-title p {
+    margin-top: 0.5rem;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 5rem;
+    align-items: center;
+    min-height: 75vh;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    color: var(--muted);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.hero-description {
+    margin-top: 1.5rem;
+    max-width: 650px;
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button,
+.button-outline {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.95rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.button {
+    background: var(--primary);
+    color: white;
+}
+
+.button:hover {
+    background: var(--primary-hover);
+}
+
+.button-outline {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+}
+
+.button-outline:hover {
+    background: #f1f5f9;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
-/* Project cards */
 .project-card {
     background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
 }
 
 .project-card img {
     width: 100%;
-    border-radius: 6px;
-    margin-bottom: 10px;
+    height: 220px;
+    object-fit: cover;
 }
 
 .project-card h3 {
-    margin-bottom: 8px;
+    padding: 1.25rem 1.25rem 0.5rem;
 }
 
-/* Buttons */
-.button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 14px;
-    background: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 14px;
+.project-card p {
+    padding: 0 1.25rem;
 }
 
-.button:hover {
-    background: #1d4ed8;
+.project-card .button {
+    margin: 1.25rem;
 }
 
-/* Lists */
+/* =========================
+   COURSEWORK
+========================= */
+
+.coursework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.coursework-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.coursework-card:hover {
+    transform: translateY(-6px);
+}
+
+.coursework-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.coursework-card h3 {
+    padding: 1.25rem 1.25rem 0.5rem;
+}
+
+.coursework-card p {
+    padding: 0 1.25rem;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.skill-card p {
+    margin-top: 0.75rem;
+}
+
+/* =========================
+   LISTS
+========================= */
+
 ul {
-    margin-top: 10px;
-    padding-left: 20px;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
 }
 
 li {
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 }
 
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     text-align: center;
-    padding: 20px;
-    background: #1f2937;
-    color: white;
-    margin-top: 40px;
-}
-
-/* Images inside project pages */
-section img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border);
+    background: #022a3a;
 }
 
 .socials {
-    margin-top: 12px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .socials a {
-    margin: 0 8px;
-    display: inline-block;
-    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
-.socials svg {
-    fill: #9ca3af;
-    transition: fill 0.2s ease, transform 0.2s ease;
+.socials a:hover {
+    color: var(--primary);
 }
 
-.socials a:hover svg {
-    fill: white;
-    transform: scale(1.15);
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
 }

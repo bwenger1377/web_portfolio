@@ -1,6 +1,6 @@
 <!--
 Written by Benjamin Wenger and Copilot 365 on 5-20-26
-Last revision 8-19-26
+Last revision 9-11-26
 HTML Code for home page
 -->
 
@@ -9,41 +9,153 @@ HTML Code for home page
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Benjamin Wenger | Portfolio</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header>
-    <h1>Benjamin Wenger</h1>
-    <p>Electrical Engineering Student</p>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="coursework.html">Coursework</a>
-    </nav>
-</header>
+<section id="home" class="hero">
 
-<section>
-    <img src="images/S2026 Headshot.jpg" alt="Spring 2026 Headshot" style="max-width:25%;">
-    <h2>Welcome</h2>
-    <p>
-        I am a junior Electrical Engineering student at Messiah University working with embedded systems
-        and sensor integration. I enjoy building projects and learning at the intersection of software and hardware.
-    </p>
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            Electrical Engineering Student
+        </p>
+
+        <h1>Benjamin Wenger</h1>
+
+        <h2 class="hero-subtitle">
+            Embedded Systems • Signal Processing • Software Development
+        </h2>
+
+        <p class="hero-description">
+            I am a junior BSEE at Messiah University with interests in signal processing and embedded systems.
+            I enjoy learning and building both hardware and software.
+        </p>
+
+        <div class="hero-buttons">
+            <a class="button" href="#projects">View Projects</a>
+
+            <a class="button"
+               href="https://linkedin.com/in/benjamin-wenger-bw1377"
+               target="_blank">
+                LinkedIn
+            </a>
+        </div>
+        
+    </div>
+
+    <div class="hero-image">
+        <img src="images/S2026 Headshot.jpg" alt="Spring 2026 Headshot" style="max-width:100%;">
+    </div>
+
 </section>
 
-<section>
-    <h2>Highlights</h2>
-    <ul>
-        <li>Full-System Engineering: Designing, building, testing, and improving projects from start to finish.</li>
-        <li>Automation and Problem-Solving: Building software to streamline repetitive processes.</li>
-        <li>Technical Curiosity: Constantly learning new technologies and asking intentional questions.</li>
-    </ul>
+<section id="projects">
+
+    <div class="section-title">
+        <h2>Featured Projects</h2>
+        <hr>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <img src="images/project1_thumbnail.png" alt="Engineering Documentation Repository">
+
+            <h3>
+                Development and Revision Tracking Hub (DARTH VADER)
+            </h3>
+
+            <p>
+                Python application developed during my internship at Newport News Shipbuilding to automate engineering documentation.
+            </p>
+
+            <a class="button" href="projects/project1.html">Details</a>
+
+        </div>
+
+        <div class="project-card">
+
+            <img src="images/project2_thumbnail.png" alt="Target-Tracking Turret">
+
+            <h3>Vision-Based Target Tracking Turret</h3>
+
+            <p>
+                Active personal project utilizing computer vision and motor control to autonomously track moving targets in real time.
+            </p>
+
+            <a class="button" href="projects/project2.html">Details</a>
+
+        </div>
+
+        <div class="project-card">
+
+            <img src="images/project3_thumbnail.png" alt="Instrumentation & Measurement Component Tester">
+
+            <h3>Instrumentation & Measurement Component Tester</h3>
+
+            <p>
+                Built, tested, and debugged a device used to test the functionality of 11 sensors with various communication protocols.
+            </p>
+
+            <a class="button" href="projects/project3.html">Details</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="coursework">
+
+    <div class="section-title">
+        <h2>Relevant Coursework</h2>
+        <hr>
+    </div>
+
+    <div class="coursework-grid">
+
+        <div class="coursework-card">
+
+            <h3>
+                Fall 2026
+            </h3>
+
+            <ul>
+                <li>Linear Systems</li>
+                <li>Analog Electronics</li>
+                <li>Control Systems</li>
+                <li>Industrial Automation</li>
+            </ul>
+
+        </div>
+
+        <div class="coursework-card">
+
+            <h3>Spring 2027</h3>
+
+            <ul>
+                <li>Electrical Devices (Digital/FPGAs)</li>
+                <li>Embedded Systems Design</li>
+                <li>Dynamics and Vibrations</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <br></br>
+
+    <p>Transcript available upon request.</p>
 </section>
 
 <footer>
     <p>© 2026 Benjamin Wenger</p>
+    <p><em>Soli Deo Gloria</em></p>
 
     <div class="socials">
         <!-- LinkedIn -->
@@ -68,6 +180,3 @@ HTML Code for home page
         </a>
     </div>
 </footer>
-
-</body>
-</html>
